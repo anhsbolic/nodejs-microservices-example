@@ -1,0 +1,681 @@
+{
+	"info": {
+		"_postman_id": "faece6e9-d64a-4ffc-b0dc-524e7e239f4c",
+		"name": "Services API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{product_host}}/product?page=1&limit=5&sort_by=name_asc",
+							"host": [
+								"{{product_host}}"
+							],
+							"path": [
+								"product"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "sort_by",
+									"value": "name_asc",
+									"description": "name_asc, name_desc"
+								},
+								{
+									"key": "search",
+									"value": "Product",
+									"description": "search product name",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{product_host}}/product/61ee552dff17759c9f370552",
+							"host": [
+								"{{product_host}}"
+							],
+							"path": [
+								"product",
+								"61ee552dff17759c9f370552"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Product 2\",\n    \"description\": \"Deskripsi Product\",\n    \"price\": 400000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{product_host}}/product",
+							"host": [
+								"{{product_host}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Product 1aads\",\n    \"description\": \"Deskripsi Product 2\",\n    \"price\": 22000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{product_host}}/product/61ee552dff17759c9f370552",
+							"host": [
+								"{{product_host}}"
+							],
+							"path": [
+								"product",
+								"61ee552dff17759c9f370552"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{product_host}}/product/61ee552dff17759c9f370552",
+							"host": [
+								"{{product_host}}"
+							],
+							"path": [
+								"product",
+								"61ee552dff17759c9f370552"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Purchase Order",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{purchase_order_host}}/purchase-order?page=1&limit=5&sort_by=created_at_asc",
+							"host": [
+								"{{purchase_order_host}}"
+							],
+							"path": [
+								"purchase-order"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "sort_by",
+									"value": "created_at_asc",
+									"description": "po_date_asc, po_date_desc, created_at_asc, created_at_desc, product_asc, product_desc"
+								},
+								{
+									"key": "status",
+									"value": "unbilled",
+									"description": "unbilled, billed",
+									"disabled": true
+								},
+								{
+									"key": "product",
+									"value": "61ecf5079094f516dda31e7d",
+									"description": "product id",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "po-1642990838355",
+									"description": "search po number",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{purchase_order_host}}/purchase-order/61ee0cf619fcd191969c921b",
+							"host": [
+								"{{purchase_order_host}}"
+							],
+							"path": [
+								"purchase-order",
+								"61ee0cf619fcd191969c921b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"po_date\": \"2022-01-27\",\n    \"product_id\": \"61ef6388b485f1f13d14cd6a\",\n    \"quantity\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{purchase_order_host}}/purchase-order",
+							"host": [
+								"{{purchase_order_host}}"
+							],
+							"path": [
+								"purchase-order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"po_date\": \"2022-01-18\",\n    \"quantity\": 8\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{purchase_order_host}}/purchase-order/61ee0cf619fcd191969c921b",
+							"host": [
+								"{{purchase_order_host}}"
+							],
+							"path": [
+								"purchase-order",
+								"61ee0cf619fcd191969c921b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{purchase_order_host}}/purchase-order/61ee0d4619fcd191969c922b",
+							"host": [
+								"{{purchase_order_host}}"
+							],
+							"path": [
+								"purchase-order",
+								"61ee0d4619fcd191969c922b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Billing",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{billing_host}}/billing?page=1&limit=5&sort_by=created_at_asc",
+							"host": [
+								"{{billing_host}}"
+							],
+							"path": [
+								"billing"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "sort_by",
+									"value": "created_at_asc",
+									"description": "billing_date_asc, billing_date_desc, due_date_asc, due_date_desc, created_at_asc, created_at_desc"
+								},
+								{
+									"key": "status",
+									"value": "unpaid",
+									"description": "unpaid, paid, cancelled",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "billing-1642996723426",
+									"description": "search biling number",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{billing_host}}/billing/61ee23f314b0ba7c1c0cd8bf",
+							"host": [
+								"{{billing_host}}"
+							],
+							"path": [
+								"billing",
+								"61ee23f314b0ba7c1c0cd8bf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"po_id\": \"61ef6391877a12fc6801b8a0\",\n    \"billing_date\": \"2022-01-20\",\n    \"due_date\": \"2022-01-27\",\n    \"auto_create_invoice\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{billing_host}}/billing",
+							"host": [
+								"{{billing_host}}"
+							],
+							"path": [
+								"billing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"billing_date\": \"2022-01-21\",\n    \"due_date\": \"2022-01-28\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{billing_host}}/billing/61ee23f314b0ba7c1c0cd8bf",
+							"host": [
+								"{{billing_host}}"
+							],
+							"path": [
+								"billing",
+								"61ee23f314b0ba7c1c0cd8bf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{billing_host}}/billing/61ee21659060c0d758bc06dc",
+							"host": [
+								"{{billing_host}}"
+							],
+							"path": [
+								"billing",
+								"61ee21659060c0d758bc06dc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay billing",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"paid\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{billing_host}}/billing/61ee240814b0ba7c1c0cd8cd/pay",
+							"host": [
+								"{{billing_host}}"
+							],
+							"path": [
+								"billing",
+								"61ee240814b0ba7c1c0cd8cd",
+								"pay"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel billing",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"cancel\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{billing_host}}/billing/61ee240114b0ba7c1c0cd8c8/cancel",
+							"host": [
+								"{{billing_host}}"
+							],
+							"path": [
+								"billing",
+								"61ee240114b0ba7c1c0cd8c8",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Invoice",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{invoice_host}}/invoice?page=1&limit=5&sort_by=created_at_asc",
+							"host": [
+								"{{invoice_host}}"
+							],
+							"path": [
+								"invoice"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "sort_by",
+									"value": "created_at_asc",
+									"description": "invoice_date_asc, invoice_date_desc, created_at_asc, created_at_desc"
+								},
+								{
+									"key": "status",
+									"value": "approved",
+									"description": "created, approved",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "billing-1642996723426",
+									"description": "search invoice number",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{invoice_host}}/invoice/61ee2e841bb2c0854cebb4c5",
+							"host": [
+								"{{invoice_host}}"
+							],
+							"path": [
+								"invoice",
+								"61ee2e841bb2c0854cebb4c5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"billing_id\": \"61ee684395657707a6a29f14\",\n    \"invoice_date\": \"2022-01-20\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{invoice_host}}/invoice",
+							"host": [
+								"{{invoice_host}}"
+							],
+							"path": [
+								"invoice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"invoice_date\": \"2022-01-22\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{invoice_host}}/invoice/61ee2e841bb2c0854cebb4c5",
+							"host": [
+								"{{invoice_host}}"
+							],
+							"path": [
+								"invoice",
+								"61ee2e841bb2c0854cebb4c5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{invoice_host}}/invoice/61ee2e841bb2c0854cebb4c5",
+							"host": [
+								"{{invoice_host}}"
+							],
+							"path": [
+								"invoice",
+								"61ee2e841bb2c0854cebb4c5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "approve invoice",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"paid\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{invoice_host}}/invoice/61ee2e501bb2c0854cebb4ad/approve",
+							"host": [
+								"{{invoice_host}}"
+							],
+							"path": [
+								"invoice",
+								"61ee2e501bb2c0854cebb4ad",
+								"approve"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
